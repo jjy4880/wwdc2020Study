@@ -14,7 +14,7 @@
 
 ### iOS 14
 
-<img src="/Users/user/Library/Application Support/typora-user-images/image-20200920201304598.png" alt="image-20200920201304598" style="zoom:45%;" />
+<img src="./images/iOS14_location_prompt.png" style="zoom:45%;" />
 
 - **Precise 옵션**을 사용하면 사용자가 정확한 위치가 아닌 대략적인 위치 만 앱에 부여 할 수 있습니다.
   설정에서 사용자에게도 표시됩니다.
@@ -27,19 +27,19 @@
 
 - **인증 상태**
 
-![image-20200920202506593](/Users/user/Library/Application Support/typora-user-images/image-20200920202506593.png)
+![image-20200920202506593](./images/new_api_location_status.png)
 
 - **위치 정확도**
 
-![image-20200920202634300](/Users/user/Library/Application Support/typora-user-images/image-20200920202634300.png)
+![image-20200920202634300](./images/new_api_acc.png)
 
 > **reducedAccuracy** iOS 14에서 추가된 옵션
 
-- 추가된 AccurarcyAuthorization에 따라서 DelegateMethod도 수정됨
+- **추가된 AccurarcyAuthorization에 따라서 DelegateMethod도 수정됨**
 
-![image-20200920203039029](/Users/user/Library/Application Support/typora-user-images/image-20200920203039029.png)
+![image-20200920203202925](./images/new_api_location_manager.png)
 
-![image-20200920203202925](/Users/user/Library/Application Support/typora-user-images/image-20200920203202925.png)
+![image-20200920203039029](./images/new_api_updated_location.png)
 
 ```
 reducedAccuracy은 이전과 마찬가지로 didUpdateLocations 델리게이트에 계속 전달됩니다.
@@ -50,7 +50,7 @@ reducedAccuracy은 이전과 마찬가지로 didUpdateLocations 델리게이트�
 
 ### 적용 사례
 
-<img src="/Users/user/Library/Application Support/typora-user-images/image-20200920204733627.png" alt="image-20200920204733627" style="zoom:50%;" />
+<img src="./images/reduced_acc_exam.png" alt="image-20200920204733627" style="zoom:50%;" />
 
 - **reducedAccuracy**
   -  넓은 파란 원 안에 실제로 존재하는 위치가 포함되어있고, 상단에 `Precise` 옵션 Off 상태를 알려주어 정확도가 낮다는것을 표현
@@ -60,10 +60,10 @@ reducedAccuracy은 이전과 마찬가지로 didUpdateLocations 델리게이트�
   - 설정으로 이동시켜 값을 수정을 유도
   - 일시적으로 fullAccuracy옵션을 사용할 수 있도록 허용
 
-  ![image-20200920205253389](/Users/user/Library/Application Support/typora-user-images/image-20200920205253389.png)
+  ![image-20200920205253389](./images/temp_request_fullacc.png)
   - **PurposeKey**
 
-  ![image-20200920205553196](/Users/user/Library/Application Support/typora-user-images/image-20200920205553196.png)
+  ![image-20200920205553196](./images/ask_for_acc.png)
 
 - 사용자에게 필요할때만 fullAccuracy옵션을 요구하여 불필요한 정보에 대하여 당당 해질 수 있다.
 
@@ -71,7 +71,7 @@ reducedAccuracy은 이전과 마찬가지로 didUpdateLocations 델리게이트�
 
 ### Background Location update
 
-![image-20200920211140462](/Users/user/Library/Application Support/typora-user-images/image-20200920211140462.png)
+![image-20200920211140462](./images/result_acc_movement.png)
 
 - 도착한 시간은 동일하지만 정확도에 따라 결과가 다름
 - Beacon and other regions monitoring is disabled under .reducedAccuracy
@@ -80,11 +80,11 @@ reducedAccuracy은 이전과 마찬가지로 didUpdateLocations 델리게이트�
 
 ### Reduced accuracy by default
 
-![image-20200920212242419](/Users/user/Library/Application Support/typora-user-images/image-20200920212242419.png)
+![image-20200920212242419](./images/reduced_acc_bydefault_code.png)
 
 - **info.plist 설정**
 
-![image-20200920212357466](/Users/user/Library/Application Support/typora-user-images/image-20200920212357466.png)
+![image-20200920212357466](images/reduced_acc_bydefault.png)
 
 ### Desired Accuracy 
 
@@ -102,7 +102,7 @@ desiredAccuracy는 필요한만큼의 정확도 만 사용하도록 권장하기
 
 ### How's it work
 
-![image-20200920215940186](/Users/user/Library/Application Support/typora-user-images/image-20200920215940186.png)
+![image-20200920215940186](./images/reduced_acc_location_work.png)
 
 - 정확도가 낮은 위치는 소음이 추가 된 실제 위치가 아니라 양자화 된 정보임
 
